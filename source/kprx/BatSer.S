@@ -1,0 +1,11 @@
+	.set noreorder
+
+#include "pspstub.s"
+
+	STUB_START	"BatSer",0x40090000,0x00050005
+	STUB_FUNC	0xE02EBC11,RetVer
+	STUB_FUNC	0x016F7001,ReadSerial
+	STUB_FUNC	0x4C1A65E9,WriteSerial
+	STUB_FUNC	0xFA023B70,ReadProm
+	STUB_FUNC	0xCF381658,WriteProm
+	STUB_END

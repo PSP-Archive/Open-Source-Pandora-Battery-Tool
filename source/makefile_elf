@@ -1,0 +1,17 @@
+TARGET = ospbt
+OBJS = main.o BatSer.o
+
+INCDIR =
+CFLAGS = -O2 -G0 -Wall -DRELVER=\"$(RELVER)\"
+CXXFLAGS = $(CFLAGS) -fno-exceptions -fno-rtti
+ASFLAGS = $(CFLAGS)
+
+LIBDIR = ./
+LIBS = 
+LDFLAGS = -lm
+
+EXTRA_TARGETS = EBOOT.PBP
+PSP_EBOOT_TITLE = OS Pandora Battery Tool $(RELVER)
+
+PSPSDK=$(shell psp-config --pspsdk-path)
+include data/build.mak
